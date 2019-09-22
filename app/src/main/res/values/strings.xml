@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">GeoQuiz</string>
-    <string name="question_text">Canberra is the capital of Australia.</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect :(</string>
+    <string name="next_button">Next</string>
+    <string name="question_australia">Canberra is the capital of Australia.</string>
+    <string name="question_sneaker1">Green, orange, puple, and yellow were the original 4 colors of "The Ten" collaboration</string>
+    <string name="question_sneaker2">The original Nike Uptempo\'s were released in 2015</string>
+    <string name="question_sneaker3">The Yeezy 350 boost originally sold at $320 retail</string>
+    <string name="question_sneaker4">The original color wave of Human Racers were yellow and black</string>
+    <string name="question_sneaker5">The SUpreme x Nike Dunks came out in 6 color waves</string>
+    <string name="question_sneaker6">When OffWhite did their original collab with Nike, they released 10 types of shoes</string>
+
 </resources>
