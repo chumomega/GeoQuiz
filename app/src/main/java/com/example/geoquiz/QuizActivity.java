@@ -18,7 +18,6 @@ public class QuizActivity extends AppCompatActivity {
     private int mCurrentIndex = 0;
 
     private Question[] mQuestionBank = new Question[] {
-        new Question(R.string.question_australia, true),
         new Question(R.string.question_sneaker1, false),
         new Question(R.string.question_sneaker2, false),
         new Question(R.string.question_sneaker3, false),
