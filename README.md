@@ -16,3 +16,8 @@
   - run app like normal but click on the android device instead of emulator
   - app automatically opens on your device once built and ready to run
   
+ ### Notes
+  - create a custom filter in logcat to only see logs for a specific tag
+  - 
+  
+  
