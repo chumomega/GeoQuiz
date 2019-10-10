@@ -7,6 +7,8 @@
  - make the next question appear by clicking the text
  - add a previous button
  - make the prev and next only image buttons
+ - prevent repeat answers
+ - grade the quiz
  - 
  ### Set up app on your android device(from android studio on a mac)
   - connect android device to laptop

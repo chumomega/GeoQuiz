@@ -75,6 +75,10 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                 updateQuestion();
+
+                mTrueButton.setEnabled(true);
+                mFalseButton.setEnabled(true);
+                mPrevButton.setEnabled(true);
             }
         });
 
@@ -135,6 +139,9 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void checkAnswer(boolean userAnswer) {
+        this.mTrueButton.setEnabled(false);
+        this.mFalseButton.setEnabled(false);
+        this.mPrevButton.setEnabled(false);
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
 
         int messageResId = 0;
@@ -149,5 +156,6 @@ public class QuizActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, messageResId, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP, 0, 0);
         toast.show();
+
     }
 }
