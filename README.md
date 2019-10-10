@@ -20,6 +20,6 @@
   
  ### Notes
   - create a custom filter in logcat to only see logs for a specific tag
-  - 
+  - text fields have their own savedinstancestates
   
   

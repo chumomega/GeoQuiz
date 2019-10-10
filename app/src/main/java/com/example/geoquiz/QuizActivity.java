@@ -22,6 +22,7 @@ public class QuizActivity extends AppCompatActivity {
     private ImageButton mPrevButton;
     private TextView mQuestionTextView;
     private int mCurrentIndex = 0;
+    private int runningTotal = 0;
 
     private Question[] mQuestionBank = new Question[] {
         new Question(R.string.question_sneaker1, false),
@@ -48,8 +49,7 @@ public class QuizActivity extends AppCompatActivity {
         this.mQuestionTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCurrentIndex = (mCurrentIndex +1) % mQuestionBank.length;
-                updateQuestion();
+                getNextQuestion();
             }
         });
 
@@ -73,12 +73,7 @@ public class QuizActivity extends AppCompatActivity {
         this.mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
-                updateQuestion();
-
-                mTrueButton.setEnabled(true);
-                mFalseButton.setEnabled(true);
-                mPrevButton.setEnabled(true);
+                getNextQuestion();
             }
         });
 
@@ -94,6 +89,31 @@ public class QuizActivity extends AppCompatActivity {
                 updateQuestion();
             }
         });
+    }
+
+    private void getNextQuestion() {
+        mCurrentIndex = mCurrentIndex + 1;
+
+        if (mCurrentIndex > this.mQuestionBank.length - 1) {
+            showScore();
+        }
+        else {
+            updateQuestion();
+            mTrueButton.setEnabled(true);
+            mFalseButton.setEnabled(true);
+            mPrevButton.setEnabled(true);
+        }
+    }
+
+    private void showScore() {
+        double score = (double) this.runningTotal / (double) this.mQuestionBank.length;
+
+        //TODO - remember to take this out
+        System.out.println("This is the score " + score);
+        String toastString = getString(R.string.quiz_complete, score);
+        Toast toast = Toast.makeText(this, toastString, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP, 0, 0);
+        toast.show();
     }
 
     @Override
@@ -148,6 +168,7 @@ public class QuizActivity extends AppCompatActivity {
 
         if (userAnswer == answerIsTrue) {
             messageResId = R.string.correct_toast;
+            this.runningTotal++;
         }
         else {
             messageResId = R.string.incorrect_toast;
@@ -156,6 +177,5 @@ public class QuizActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, messageResId, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP, 0, 0);
         toast.show();
-
     }
 }
