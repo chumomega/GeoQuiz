@@ -106,10 +106,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showScore() {
-        double score = (double) this.runningTotal / (double) this.mQuestionBank.length;
-
-        //TODO - remember to take this out
-        System.out.println("This is the score " + score);
+        double score = ((double) this.runningTotal / (double) this.mQuestionBank.length) * 100;
         String toastString = getString(R.string.quiz_complete, score);
         Toast toast = Toast.makeText(this, toastString, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.TOP, 0, 0);
