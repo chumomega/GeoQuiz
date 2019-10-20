@@ -4,7 +4,7 @@
     <string name="false_button">False</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect :(</string>
-    <string name="next_button">Next button</string>
+    <string name="next_button">Next</string>
     <string name="prev_button">Previous button</string>
     <string name="quiz_complete">The Sneaker Quiz is over! Your score is %.2f%%</string>
     <string name="question_sneaker1">Green, orange, puple, and yellow were the original 4 colors of "The Ten" collaboration</string>

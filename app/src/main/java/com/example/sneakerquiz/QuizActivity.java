@@ -2,6 +2,7 @@ package com.example.sneakerquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -18,7 +19,8 @@ public class QuizActivity extends AppCompatActivity {
 
     private Button mTrueButton;
     private Button mFalseButton;
-    private ImageButton mNextButton;
+    private Button mNextButton;
+    private Button cheatButton;
     private TextView mQuestionTextView;
     private int mCurrentIndex = 0;
     private int runningTotal = 0;
@@ -68,11 +70,21 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        this.mNextButton = (ImageButton) findViewById(R.id.next_button);
+        this.mNextButton = (Button) findViewById(R.id.next_button);
         this.mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getNextQuestion();
+            }
+        });
+
+        this.cheatButton = findViewById(R.id.cheat_button);
+        this.cheatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
+                Intent intent = CheatActivity.newIntent(QuizActivity.this,answerIsTrue);
+                startActivity(intent);
             }
         });
 
