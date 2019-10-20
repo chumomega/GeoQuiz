@@ -1,4 +1,4 @@
-package com.example.geoquiz;
+package com.example.sneakerquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 

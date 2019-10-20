@@ -1,4 +1,4 @@
-package com.example.geoquiz;
+package com.example.sneakerquiz;
 
 public class Question {
     private int mTextResId;

@@ -9,7 +9,8 @@
  - make the prev and next only image buttons
  - prevent repeat answers
  - grade the quiz
- - 
+ - Explore the Layout Inspector
+ - Explore allocation tracking
  ### Set up app on your android device(from android studio on a mac)
   - connect android device to laptop
   - on android device go to `settings` -> `about phone/tablet` and press`Build Number` several times to enable developer mode

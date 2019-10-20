@@ -13,5 +13,8 @@
     <string name="question_sneaker4">The original color wave of Human Racers were yellow and black</string>
     <string name="question_sneaker5">The SUpreme x Nike Dunks came out in 6 color waves</string>
     <string name="question_sneaker6">When OffWhite did their original collab with Nike, they released 10 types of shoes</string>
-
+    <string name="warning_text">Are you sure you want to do this?</string>
+    <string name="show_answer_button">Show Answer</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="judgement_toast">Cheating is wrong.</string>
 </resources>
