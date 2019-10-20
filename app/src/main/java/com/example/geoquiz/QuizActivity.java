@@ -19,7 +19,6 @@ public class QuizActivity extends AppCompatActivity {
     private Button mTrueButton;
     private Button mFalseButton;
     private ImageButton mNextButton;
-    private ImageButton mPrevButton;
     private TextView mQuestionTextView;
     private int mCurrentIndex = 0;
     private int runningTotal = 0;
@@ -43,7 +42,7 @@ public class QuizActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_quiz);
 
-        this.mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
+        this.mQuestionTextView = findViewById(R.id.question_text_view);
         this.updateQuestion();
 
         this.mQuestionTextView.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +52,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        this.mTrueButton = (Button) findViewById(R.id.true_button);
+        this.mTrueButton = findViewById(R.id.true_button);
         this.mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,18 +76,6 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        this.mPrevButton = (ImageButton) findViewById(R.id.prev_button);
-        this.mPrevButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mCurrentIndex == 0) {
-                    mCurrentIndex = 5;
-                } else {
-                    mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
-                }
-                updateQuestion();
-            }
-        });
     }
 
     private void getNextQuestion() {
@@ -101,7 +88,6 @@ public class QuizActivity extends AppCompatActivity {
             updateQuestion();
             mTrueButton.setEnabled(true);
             mFalseButton.setEnabled(true);
-            mPrevButton.setEnabled(true);
         }
     }
 
@@ -158,7 +144,6 @@ public class QuizActivity extends AppCompatActivity {
     private void checkAnswer(boolean userAnswer) {
         this.mTrueButton.setEnabled(false);
         this.mFalseButton.setEnabled(false);
-        this.mPrevButton.setEnabled(false);
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
 
         int messageResId = 0;
