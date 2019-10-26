@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class CheatActivity extends AppCompatActivity {
     //use the package name to qualify your extra names to void collisions from other activities
     private static final String EXTRA_ANSWER_IS_TRUE = "com.example.sneakerquiz.answer_is_true";
+    private static final String EXTRA_ANSWER_SHOWN = "com.example.sneakerquiz.answer_shown";
     private boolean answerIsTrue;
 
     private Button show_answer_button;
@@ -34,8 +35,19 @@ public class CheatActivity extends AppCompatActivity {
                 } else {
                     answer_text_view.setText(R.string.false_button);
                 }
+                setAnswerShownResult(true);
             }
         });
+    }
+
+    private void setAnswerShownResult(boolean isAnswerShown) {
+        Intent data = new Intent();
+        data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
+        setResult(RESULT_OK, data);
+    }
+
+    public static boolean wasAnswerShown(Intent result) {
+        return result.getBooleanExtra(EXTRA_ANSWER_SHOWN, false);
     }
 
     public static Intent newIntent(Context packageContext, boolean answerIsTrue) {

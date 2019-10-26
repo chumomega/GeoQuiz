@@ -11,6 +11,8 @@
  - grade the quiz
  - Explore the Layout Inspector
  - Explore allocation tracking
+ - users can circumvent cheating measures
+    - they can rotate once in cheating activity and rotate when back to quizactivity. fix these!  
  ### Set up app on your android device(from android studio on a mac)
   - connect android device to laptop
   - on android device go to `settings` -> `about phone/tablet` and press`Build Number` several times to enable developer mode
