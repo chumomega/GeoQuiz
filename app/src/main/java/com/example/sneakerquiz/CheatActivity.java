@@ -2,10 +2,14 @@ package com.example.sneakerquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -36,6 +40,24 @@ public class CheatActivity extends AppCompatActivity {
                     answer_text_view.setText(R.string.false_button);
                 }
                 setAnswerShownResult(true);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    int cx = show_answer_button.getWidth() / 2;
+                    int cy = show_answer_button.getHeight() / 2;
+                    float radius = show_answer_button.getWidth();
+                    Animator anim = ViewAnimationUtils.createCircularReveal(show_answer_button, cx, cy, radius, 0);
+                    anim.addListener(new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            super.onAnimationEnd(animation);
+                            show_answer_button.setVisibility(View.INVISIBLE);
+                        }
+                    });
+                    anim.start();
+                }
+                else {
+                    show_answer_button.setVisibility(View.INVISIBLE);
+                }
             }
         });
     }
