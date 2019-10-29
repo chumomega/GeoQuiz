@@ -15,6 +15,7 @@
     - they can rotate once in cheating activity and rotate when back to quizactivity. fix these! 
  -  report the build version in the cheat activity
  - allow only 3 cheats before disabling the cheat button
+ - when the quiz is over, display the list of questions along with their answers
  - 
  ### Set up app on your android device(from android studio on a mac)
   - connect android device to laptop

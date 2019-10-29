@@ -27,6 +27,7 @@ public class QuizActivity extends AppCompatActivity {
     private int mCurrentIndex = 0;
     private int runningTotal = 0;
     private boolean isCheater;
+    private int numCheats = 0;
 
     private Question[] mQuestionBank = new Question[] {
         new Question(R.string.question_sneaker1, false),
@@ -48,6 +49,14 @@ public class QuizActivity extends AppCompatActivity {
                 return;
             }
             this.isCheater = CheatActivity.wasAnswerShown(data);
+
+            if (this.numCheats < 3) {
+                this.numCheats++;
+            }
+
+            if (this.numCheats == 3) {
+                this.cheatButton.setEnabled(false);
+            }
         }
     }
 
