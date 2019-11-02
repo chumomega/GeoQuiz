@@ -135,6 +135,10 @@ public class QuizActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, toastString, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.TOP, 0, 0);
         toast.show();
+        //open questions activity
+        Intent intent = new Intent(this, QuizResultsActivity.class);
+        startActivity(intent);
+
     }
 
     @Override
