@@ -23,23 +23,17 @@ public class QuizActivity extends AppCompatActivity {
 //    private Button mFalseButton;
 //    private Button mNextButton;
 //    private Button cheatButton;
-//    private TextView mQuestionTextView;
+    private TextView mQuestionTextView;
     private int mCurrentIndex = 0;
 //    private int runningTotal = 0;
 //    private boolean isCheater;
 //    private int numCheats = 0;
 
-    private Question[] mQuestionBank = new Question[] {
-        new Question(R.string.question_sneaker1, false),
-        new Question(R.string.question_sneaker2, false),
-        new Question(R.string.question_sneaker3, false),
-        new Question(R.string.question_sneaker4, true),
-        new Question(R.string.question_sneaker5, false),
-        new Question(R.string.question_sneaker6, true),
-    };
+    private Question[] mQuestionBank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mQuestionBank = QuestionBank.getQuestions();
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate(Bundle) called");
         setContentView(R.layout.activity_quiz);
